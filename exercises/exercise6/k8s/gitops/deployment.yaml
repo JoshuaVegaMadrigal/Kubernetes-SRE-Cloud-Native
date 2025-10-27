@@ -11,7 +11,7 @@ metadata:
     deployment.kubernetes.io/revision: "1"
     gitops.argoproj.io/sync-wave: "1"
 spec:
-  replicas: 2
+  replicas: 3
   revisionHistoryLimit: 1
   strategy:
     type: RollingUpdate
@@ -36,7 +36,7 @@ spec:
     spec:
       containers:
       - name: sre-demo-app
-        image: image: us-central1-docker.pkg.dev/stalwart-yen-470420-t1/sre-demo-app/sre-demo-app:latest
+        image: us-central1-docker.pkg.dev/PROJECT_ID/sre-demo-app/sre-demo-app:latest
         ports:
         - containerPort: 8080
           name: http
